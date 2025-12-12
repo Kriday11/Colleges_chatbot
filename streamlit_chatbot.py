@@ -32,7 +32,7 @@ st.markdown("""
 
 
 st.title("🏫 Chennai Colleges Chatbot")
-st.markdown("Ask me about colleges in Chennai! I have information on 35+ colleges.")
+st.markdown("Chatbot loaded.")
 
 
 with st.sidebar:
@@ -45,9 +45,8 @@ with st.sidebar:
     st.divider()
     st.write("💡 **Try asking:**")
     st.write("- 'Anna University'")
-    st.write("- 'Colleges in Guindy'")
+    st.write("- 'Guindy'")
     st.write("- 'SRM Institute'")
-    st.write("- 'Medical colleges'")
 
 
 # Load CSV
@@ -59,17 +58,6 @@ except Exception as e:
     df = pd.DataFrame()
 
 
-# Initialize chat
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-        {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
-    ]
-
-
-# Display chat
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
 
 
 # Chatbot response function
@@ -223,4 +211,5 @@ if st.sidebar.button("Clear Chat History"):
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
+
     st.rerun()
