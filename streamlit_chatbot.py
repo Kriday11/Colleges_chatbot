@@ -50,7 +50,7 @@ with st.sidebar:
     st.write("- 'Medical colleges'")
 
 
-# Load CSV
+
 try:
     df = pd.read_csv("colleges_csvfile.csv", delimiter=',')
     st.sidebar.success(f"✅ Loaded {len(df)} colleges")
@@ -59,7 +59,7 @@ except Exception as e:
     df = pd.DataFrame()
 
 
-# Initialize chat
+
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
@@ -69,11 +69,11 @@ if "messages" not in st.session_state:
 def chatbot_response(user_input):
     user = user_input.lower()
     
-    # Check if dataframe is loaded
+
     if df.empty:
         return "Database not loaded. Please check CSV file."
     
-    # Greetings
+    
     if 'hi' in user or 'hello' in user or 'hey' in user:
         return "Hey there! Good to see you here!\nHow are you?"
     
@@ -86,11 +86,11 @@ def chatbot_response(user_input):
     elif 'ok' in user or 'okay' in user:
         return "Good to go!\nEnter college name or the Area name to fetch the details!"
     
-    # Helper function to format college information
+   
     def format_college_info(college_row):
         info = f"**🏫 {college_row.get('Name', 'College')}**\n\n"
         
-        # Format each field nicely
+     
         fields = [
             ("📍 Address", college_row.get('Address', 'Not available')),
             ("📮 Pincode", college_row.get('Pincode', 'Not available')),
@@ -100,13 +100,13 @@ def chatbot_response(user_input):
         ]
         
         for label, value in fields:
-            if pd.notna(value):  # Check if value is not NaN
+            if pd.notna(value):  
                 info += f"• **{label}:** {value}\n"
         
         info += f"\n✅ **Total colleges in database:** {len(df)}"
         return info
     
-    # College search logic - WITH FORMATTED OUTPUT
+    
     if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user:
         return format_college_info(df.iloc[0])
     
@@ -216,36 +216,36 @@ def chatbot_response(user_input):
         return "❌ Failed to fetch the results!\n\n💡 **Try asking about:**\n• 'Anna University'\n• 'Colleges in Guindy'\n• 'SRM Institute'\n• 'Medical colleges'"
 
 
-# Display chat messages from history on app rerun
+
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# React to user input
+
 if prompt := st.chat_input("Type your message here..."):
-    # Display user message in chat message container
+   
     with st.chat_message("user"):
         st.markdown(prompt)
-    # Add user message to chat history
+    
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    # Get chatbot response
+    
     response = chatbot_response(prompt)
     
-    # Display assistant response in chat message container
+   
     with st.chat_message("assistant"):
         st.markdown(response)
-    # Add assistant response to chat history
+   
     st.session_state.messages.append({"role": "assistant", "content": response})
     
-    # Streamlit will automatically re-run and show new messages
-
-# Clear chat button
+    
+n
 if st.sidebar.button("Clear Chat History"):
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
-    st.rerun()  # Need rerun here to clear the display
+    st.rerun()  
+
 
 
 
