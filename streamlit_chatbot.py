@@ -66,12 +66,6 @@ if "messages" not in st.session_state:
     ]
 
 
-# Display chat
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
-
 # Chatbot response function
 def chatbot_response(user_input):
     user = user_input.lower()
@@ -203,22 +197,33 @@ def chatbot_response(user_input):
         return "Failed to fetch the results!\nTry entering other Name or any other Location"
 
 
-# Chat input
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# React to user input
 if prompt := st.chat_input("Type your message here..."):
-    # Add user message
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
+    # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     
-    # Get response
+    # Get chatbot response
     response = chatbot_response(prompt)
     
-    # Add bot response
+    # Display assistant response in chat message container
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
     
-    # NO st.rerun() needed - Streamlit auto-updates chat
+    # Streamlit will automatically re-run and show new messages
 
-
-# Clear chat button - Fix this too
+# Clear chat button
 if st.sidebar.button("Clear Chat History"):
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
+    st.rerun()  # Need rerun here to clear the display
