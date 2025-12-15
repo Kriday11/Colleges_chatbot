@@ -66,7 +66,6 @@ if "messages" not in st.session_state:
     ]
 
 
-# Chatbot response function
 def chatbot_response(user_input):
     user = user_input.lower()
     
@@ -87,114 +86,134 @@ def chatbot_response(user_input):
     elif 'ok' in user or 'okay' in user:
         return "Good to go!\nEnter college name or the Area name to fetch the details!"
     
-    # College search logic - ALL CONDITIONS CONVERTED
-    elif 'university of madras' in user or 'chepauk' in user or 'triplicane' in user:
-        return f"**University of Madras**\n\n{df.iloc[0].to_string()}"
+    # Helper function to format college information
+    def format_college_info(college_row):
+        info = f"**🏫 {college_row.get('Name', 'College')}**\n\n"
+        
+        # Format each field nicely
+        fields = [
+            ("📍 Address", college_row.get('Address', 'Not available')),
+            ("📮 Pincode", college_row.get('Pincode', 'Not available')),
+            ("🎓 Type", college_row.get('Type', 'Not available')),
+            ("🏙️ City", college_row.get('City', 'Not available')),
+            ("🗺️ State", college_row.get('State', 'Not available'))
+        ]
+        
+        for label, value in fields:
+            if pd.notna(value):  # Check if value is not NaN
+                info += f"• **{label}:** {value}\n"
+        
+        info += f"\n✅ **Total colleges in database:** {len(df)}"
+        return info
+    
+    # College search logic - WITH FORMATTED OUTPUT
+    if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user:
+        return format_college_info(df.iloc[0])
     
     elif 'anna university' in user or 'guindy' in user:
-        return f"**Anna University**\n\n{df.iloc[1].to_string()}"
+        return format_college_info(df.iloc[1])
     
     elif 'college of engineering' in user or 'guindy' in user:
-        return f"**College of Engineering, Guindy**\n\n{df.iloc[2].to_string()}"
+        return format_college_info(df.iloc[2])
     
     elif 'madras christian college' in user or 'mcc' in user or 'east tambaram' in user:
-        return f"**Madras Christian College**\n\n{df.iloc[3].to_string()}"
+        return format_college_info(df.iloc[3])
     
     elif 'loyola college' in user or 'nungambakkam' in user:
-        return f"**Loyola College**\n\n{df.iloc[4].to_string()}"
+        return format_college_info(df.iloc[4])
     
     elif 'presidency college' in user or 'chepauk' in user:
-        return f"**Presidency College**\n\n{df.iloc[5].to_string()}"
+        return format_college_info(df.iloc[5])
     
     elif "st. joseph's college" in user or 'cuddalore' in user:
-        return f"**St. Joseph's College**\n\n{df.iloc[6].to_string()}"
+        return format_college_info(df.iloc[6])
     
     elif "women's christian college" in user or 'nungambakkam' in user:
-        return f"**Women's Christian College**\n\n{df.iloc[7].to_string()}"
+        return format_college_info(df.iloc[7])
     
     elif 'ssn college of engineering' in user or 'kalavakkam' in user:
-        return f"**SSN College of Engineering**\n\n{df.iloc[8].to_string()}"
+        return format_college_info(df.iloc[8])
     
     elif 'sri venkateswara college of engineering (svce)' in user or 'pennalur' in user or 'sriperumbadur' in user:
-        return f"**Sri Venkateswara College of Engineering (SVCE)**\n\n{df.iloc[9].to_string()}"
+        return format_college_info(df.iloc[9])
     
     elif 'srm institute of science and technology (main campus)' in user or 'srm' in user or 'kattankulathur' in user:
-        return f"**SRM Institute of Science and Technology (Main Campus)**\n\n{df.iloc[10].to_string()}"
+        return format_college_info(df.iloc[10])
     
     elif 'vellore institute of technology (vit chennai)' in user or 'kelambakkam' in user or 'vandalur' in user:
-        return f"**Vellore Institute of Technology (VIT Chennai)**\n\n{df.iloc[11].to_string()}"
+        return format_college_info(df.iloc[11])
     
     elif 'saveetha engineering college (saveetha university)' in user or 'thandalam' in user:
-        return f"**Saveetha Engineering College (Saveetha University)**\n\n{df.iloc[12].to_string()}"
+        return format_college_info(df.iloc[12])
     
     elif "rajalakshmi engineering college (rec)" in user or 'rajalakshmi nagar' in user or 'thandalam' in user:
-        return f"**Rajalakshmi Engineering College (REC)**\n\n{df.iloc[13].to_string()}"
+        return format_college_info(df.iloc[13])
     
     elif 'jeppiaar engineering college (jec)' in user or 'omr' in user or 'rajiv gandhi salai' in user:
-        return f"**Jeppiaar Engineering College (JEC)**\n\n{df.iloc[14].to_string()}"
+        return format_college_info(df.iloc[14])
     
     elif 'chennai institute of technology (cit)' in user or 'kundrathur' in user:
-        return f"**Chennai Institute of Technology (CIT)**\n\n{df.iloc[15].to_string()}"
+        return format_college_info(df.iloc[15])
     
     elif 'hindustan institute of technology and science' in user or 'hindustan' in user or 'omr' in user or 'padur' in user:
-        return f"**Hindustan Institute of Technology and Science**\n\n{df.iloc[16].to_string()}"
+        return format_college_info(df.iloc[16])
     
     elif 'academy of maritime education and training' in user or 'ecr' in user or 'kanathur' in user:
-        return f"**Academy of Maritime Education and Training**\n\n{df.iloc[17].to_string()}"
+        return format_college_info(df.iloc[17])
     
     elif 'dr. mgr educational and research institute' in user or 'maduravoyil' in user:
-        return f"**Dr. MGR Educational and Research Institute**\n\n{df.iloc[18].to_string()}"
+        return format_college_info(df.iloc[18])
     
     elif 'b. s. abdur rahman crescent institute of science and technology' in user or 'crescent' in user or 'vandalur' in user:
-        return f"**B.S. Abdur Rahman Crescent Institute of Science and Technology**\n\n{df.iloc[19].to_string()}"
+        return format_college_info(df.iloc[19])
     
     elif 'stanley medical college' in user or 'broadway' in user:
-        return f"**Stanley Medical College**\n\n{df.iloc[20].to_string()}"
+        return format_college_info(df.iloc[20])
     
     elif 'madras medical college' in user or 'park town' in user:
-        return f"**Madras Medical College**\n\n{df.iloc[21].to_string()}"
+        return format_college_info(df.iloc[21])
     
     elif 'ethiraj college for women' in user or 'egmore' in user:
-        return f"**Ethiraj College for Women**\n\n{df.iloc[22].to_string()}"
+        return format_college_info(df.iloc[22])
     
     elif 'dg vaishnav college' in user or 'saidapet' in user:
-        return f"**D G Vaishnav College**\n\n{df.iloc[23].to_string()}"
+        return format_college_info(df.iloc[23])
     
     elif 'mop vaishnav college for women' in user or 'nungambakkam' in user:
-        return f"**MOP Vaishnav College for Women**\n\n{df.iloc[24].to_string()}"
+        return format_college_info(df.iloc[24])
     
     elif 'the new college' in user or 'royapettah' in user:
-        return f"**The New College**\n\n{df.iloc[25].to_string()}"
+        return format_college_info(df.iloc[25])
     
     elif 'vels institute of science' in user or 'pallavaram' in user:
-        return f"**Vels Institute of Science**\n\n{df.iloc[26].to_string()}"
+        return format_college_info(df.iloc[26])
     
     elif 'sathyabama institute of science and technology' in user or 'omr' in user:
-        return f"**Sathyabama Institute of Science and Technology**\n\n{df.iloc[27].to_string()}"
+        return format_college_info(df.iloc[27])
     
     elif 'indian institute of technology madras (iitm)' in user or 'adyar' in user:
-        return f"**Indian Institute of Technology Madras (IITM)**\n\n{df.iloc[28].to_string()}"
+        return format_college_info(df.iloc[28])
     
     elif 'national institute of fashion technology' in user or 'taramani' in user:
-        return f"**National Institute of Fashion Technology**\n\n{df.iloc[29].to_string()}"
+        return format_college_info(df.iloc[29])
     
     elif 'srm institute of science and technology' in user or 'ramapuram' in user:
-        return f"**SRM Institute of Science and Technology (Ramapuram)**\n\n{df.iloc[30].to_string()}"
+        return format_college_info(df.iloc[30])
     
     elif 'a m jain college' in user or 'meenambakkam' in user or 'minambakkam' in user:
-        return f"**A M Jain College**\n\n{df.iloc[31].to_string()}"
+        return format_college_info(df.iloc[31])
     
     elif 'bharath institute of higher education and research' in user or 'selaiyur' in user:
-        return f"**Bharath Institute of Higher Education and Research**\n\n{df.iloc[32].to_string()}"
+        return format_college_info(df.iloc[32])
     
     elif 'srm institute of science and technology' in user or 'vadapalani' in user:
-        return f"**SRM Institute of Science and Technology (Vadapalani)**\n\n{df.iloc[33].to_string()}"
+        return format_college_info(df.iloc[33])
     
     elif 'madras institute of technology(mit)' in user or 'chrompet' in user:
-        return f"**Madras Institute of Technology (MIT)**\n\n{df.iloc[34].to_string()}"
+        return format_college_info(df.iloc[34])
     
     else:
-        return "Failed to fetch the results!\nTry entering other Name or any other Location"
+        return "❌ Failed to fetch the results!\n\n💡 **Try asking about:**\n• 'Anna University'\n• 'Colleges in Guindy'\n• 'SRM Institute'\n• 'Medical colleges'"
 
 
 # Display chat messages from history on app rerun
@@ -227,3 +246,4 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  # Need rerun here to clear the display
+
