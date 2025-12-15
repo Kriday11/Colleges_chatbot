@@ -134,7 +134,7 @@ def chatbot_response(user_input):
     elif 'ssn college of engineering' in user or 'kalavakkam' in user:
         return format_college_info(df.iloc[8])
     
-    elif 'sri venkateswara college of engineering (svce)' in user or 'pennalur' in user or 'sriperumbadur' in user:
+    elif 'sri venkateswara college of engineering' in user or 'svce' in user or 'pennalur' in user or 'sriperumbadur' in user:
         return format_college_info(df.iloc[9])
     
     elif 'srm institute of science and technology (main campus)' in user or 'srm' in user or 'kattankulathur' in user:
@@ -149,19 +149,19 @@ def chatbot_response(user_input):
     elif "rajalakshmi engineering college (rec)" in user or 'rajalakshmi nagar' in user or 'thandalam' in user:
         return format_college_info(df.iloc[13])
     
-    elif 'jeppiaar engineering college (jec)' in user or 'omr' in user or 'rajiv gandhi salai' in user:
+    elif 'jeppiaar engineering college' in user or or 'omr' in user or 'rajiv gandhi salai' in user:
         return format_college_info(df.iloc[14])
     
-    elif 'chennai institute of technology (cit)' in user or 'kundrathur' in user:
+    elif 'chennai institute of technology (cit)' in user or 'cit' in user or 'kundrathur' in user:
         return format_college_info(df.iloc[15])
     
     elif 'hindustan institute of technology and science' in user or 'hindustan' in user or 'omr' in user or 'padur' in user:
         return format_college_info(df.iloc[16])
     
-    elif 'academy of maritime education and training' in user or 'ecr' in user or 'kanathur' in user:
+    elif 'academy of maritime education and training' in user or 'amet' in user or 'ecr' in user or 'kanathur' in user:
         return format_college_info(df.iloc[17])
     
-    elif 'dr. mgr educational and research institute' in user or 'maduravoyil' in user:
+    elif 'dr. mgr educational and research institute' in user or 'mgr' in user or 'maduravoyil' in user:
         return format_college_info(df.iloc[18])
     
     elif 'b. s. abdur rahman crescent institute of science and technology' in user or 'crescent' in user or 'vandalur' in user:
@@ -246,4 +246,5 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  # Need rerun here to clear the display
+
 
