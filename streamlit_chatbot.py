@@ -239,17 +239,9 @@ if prompt := st.chat_input("Type your message here..."):
     st.session_state.messages.append({"role": "assistant", "content": response})
     
     
-n
+
 if st.sidebar.button("Clear Chat History"):
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  
-
-
-
-
-
-
-
-
