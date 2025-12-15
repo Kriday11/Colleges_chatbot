@@ -92,11 +92,11 @@ def chatbot_response(user_input):
         
         # Format each field nicely
         fields = [
-            ("📍 Address", college_row.get('Address', 'Not available'))\n,
-            ("📮 Pincode", college_row.get('Pincode', 'Not available'))\n,
-            ("🎓 Type", college_row.get('Type', 'Not available'))\n,
-            ("🏙️ City", college_row.get('City', 'Not available'))\n,
-            ("🗺️ State", college_row.get('State', 'Not available'))\n
+            ("📍 Address", college_row.get('Address', 'Not available')),\n
+            ("📮 Pincode", college_row.get('Pincode', 'Not available')),\n
+            ("🎓 Type", college_row.get('Type', 'Not available')),\n
+            ("🏙️ City", college_row.get('City', 'Not available')),\n
+            ("🗺️ State", college_row.get('State', 'Not available'))
         ]
         
         for label, value in fields:
@@ -246,6 +246,7 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  # Need rerun here to clear the display
+
 
 
 
