@@ -18,7 +18,7 @@ st.markdown("""
         margin: 5px 0;
     }
     .user-message {
-        background-color: #e3f2fd;
+        background-color: #008080;
         padding: 12px;
         border-radius: 10px 10px 0 10px;
     }
@@ -185,10 +185,10 @@ def chatbot_response(user_input):
     elif 'the new college' in user or 'royapettah' in user:
         return format_college_info(df.iloc[25])
     
-    elif 'vels institute of science' in user or 'pallavaram' in user:
+    elif 'vels institute of science' in user or 'pallavaram' in user or 'vels' in user:
         return format_college_info(df.iloc[26])
     
-    elif 'sathyabama institute of science and technology' in user or 'omr' in user:
+    elif 'sathyabama institute of science and technology' in user or 'sathyabama' in user or 'omr' in user:
         return format_college_info(df.iloc[27])
     
     elif 'indian institute of technology madras (iitm)' in user or 'iit' in user or 'iitm' in user or 'adyar' in user:
@@ -246,6 +246,7 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  # Need rerun here to clear the display
+
 
 
 
