@@ -128,10 +128,10 @@ def chatbot_response(user_input):
     elif "st. joseph's college" in user or 'cuddalore' in user:
         return format_college_info(df.iloc[6])
     
-    elif "women's christian college" in user or 'nungambakkam' in user:
+    elif "women's christian college" in user or 'nungambakkam' in user or 'wcc' in user:
         return format_college_info(df.iloc[7])
     
-    elif 'ssn college of engineering' in user or 'kalavakkam' in user:
+    elif 'ssn college of engineering' in user or 'kalavakkam' in user or 'ssn' in user:
         return format_college_info(df.iloc[8])
     
     elif 'sri venkateswara college of engineering' in user or 'svce' in user or 'pennalur' in user or 'sriperumbadur' in user:
@@ -140,7 +140,7 @@ def chatbot_response(user_input):
     elif 'srm institute of science and technology (main campus)' in user or 'srm' in user or 'kattankulathur' in user:
         return format_college_info(df.iloc[10])
     
-    elif 'vellore institute of technology (vit chennai)' in user or 'kelambakkam' in user or 'vandalur' in user:
+    elif 'vellore institute of technology' in user or 'vit' in user or 'kelambakkam' in user or 'vandalur' in user:
         return format_college_info(df.iloc[11])
     
     elif 'saveetha engineering college (saveetha university)' in user or 'thandalam' in user:
@@ -149,7 +149,7 @@ def chatbot_response(user_input):
     elif "rajalakshmi engineering college (rec)" in user or 'rajalakshmi nagar' in user or 'thandalam' in user:
         return format_college_info(df.iloc[13])
     
-    elif 'jeppiaar engineering college' in user or or 'omr' in user or 'rajiv gandhi salai' in user:
+    elif 'jeppiaar engineering college' in user or 'omr' in user or 'rajiv gandhi salai' in user:
         return format_college_info(df.iloc[14])
     
     elif 'chennai institute of technology (cit)' in user or 'cit' in user or 'kundrathur' in user:
@@ -191,7 +191,7 @@ def chatbot_response(user_input):
     elif 'sathyabama institute of science and technology' in user or 'omr' in user:
         return format_college_info(df.iloc[27])
     
-    elif 'indian institute of technology madras (iitm)' in user or 'adyar' in user:
+    elif 'indian institute of technology madras (iitm)' in user or 'iit' in user or 'iitm' in user or 'adyar' in user:
         return format_college_info(df.iloc[28])
     
     elif 'national institute of fashion technology' in user or 'taramani' in user:
@@ -209,7 +209,7 @@ def chatbot_response(user_input):
     elif 'srm institute of science and technology' in user or 'vadapalani' in user:
         return format_college_info(df.iloc[33])
     
-    elif 'madras institute of technology(mit)' in user or 'chrompet' in user:
+    elif 'madras institute of technology' in user or 'mit' in user or 'chrompet' in user:
         return format_college_info(df.iloc[34])
     
     else:
@@ -246,5 +246,6 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  # Need rerun here to clear the display
+
 
 
