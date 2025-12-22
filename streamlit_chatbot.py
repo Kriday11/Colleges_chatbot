@@ -211,7 +211,17 @@ def chatbot_response(user_input):
     
     elif 'madras institute of technology' in user or 'mit' in user or 'chrompet' in user:
         return format_college_info(df.iloc[34])
-    
+
+    elif 'gurunanak' or 'velacherry' or 'gnc' or 'guru nanak college' in user:
+        return format_college_info(df.iloc[35])
+
+    elif 'stella maris college' or 'stella maris' or 'gopalapuram' or 'poes garden' in user:
+        return format_college_info(df.iloc[36])
+
+    elif 'sri muthukumaran institute of technology' or 'smit' or 'kundrathur' or 'mangadu' in user:
+        return format_college_info(df.iloc[37])
+
+        
     else:
         return "❌ Failed to fetch the results!\n\n💡 **Try asking about:**\n• 'Anna University'\n• 'Colleges in Guindy'\n• 'SRM Institute'"
 
@@ -245,6 +255,7 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  
+
 
 
 
