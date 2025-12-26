@@ -50,7 +50,6 @@ with st.sidebar:
     st.write("- 'Medical colleges'")
 
 
-
 try:
     df = pd.read_csv("colleges_csvfile.csv", delimiter=',')
     st.sidebar.success(f"✅ Loaded {len(df)} colleges")
@@ -248,13 +247,13 @@ if prompt := st.chat_input("Type your message here..."):
    
     st.session_state.messages.append({"role": "assistant", "content": response})
     
-    
 
 if st.sidebar.button("Clear Chat History"):
     st.session_state.messages = [
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  
+
 
 
 
