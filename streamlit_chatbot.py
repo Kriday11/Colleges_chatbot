@@ -105,7 +105,7 @@ def chatbot_response(user_input):
         return info
     
     
-    if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user or '600005' in user:
+    if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user or 600005 in user:
         return format_college_info(df.iloc[0])
     
     elif 'anna university' in user or 'guindy' in user or '600025' in user:
@@ -251,4 +251,5 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  
+
 
