@@ -105,118 +105,118 @@ def chatbot_response(user_input):
         return info
     
     
-    if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user or 600005 in user:
+    if 'university of madras' in user or 'chepauk' in user or 'triplicane' in user:
         return format_college_info(df.iloc[0])
     
-    elif 'anna university' in user or 'guindy' in user or '600025' in user:
+    elif 'anna university' in user or 'guindy' in user:
         return format_college_info(df.iloc[1])
     
-    elif 'college of engineering' in user or 'guindy' in user or '600025' in user:
+    elif 'college of engineering' in user or 'guindy' in user:
         return format_college_info(df.iloc[2])
     
-    elif 'madras christian college' in user or 'mcc' in user or 'east tambaram' in user or '600059' in user:
+    elif 'madras christian college' in user or 'mcc' in user or 'east tambaram' in user:
         return format_college_info(df.iloc[3])
     
-    elif 'loyola college' in user or 'nungambakkam' in user or '600034' in user:
+    elif 'loyola college' in user or 'nungambakkam' in user:
         return format_college_info(df.iloc[4])
     
-    elif 'presidency college' in user or 'chepauk' in user or '600005' in user:
+    elif 'presidency college' in user or 'chepauk' in user:
         return format_college_info(df.iloc[5])
     
-    elif "st. joseph's college" in user or 'cuddalore' in user or '600001' in user:
+    elif "st. joseph's college" in user or 'cuddalore' in user:
         return format_college_info(df.iloc[6])
     
-    elif "women's christian college" in user or 'nungambakkam' in user or 'wcc' in user or '600006' in user:
+    elif "women's christian college" in user or 'nungambakkam' in user or 'wcc' in user:
         return format_college_info(df.iloc[7])
     
-    elif 'ssn college of engineering' in user or 'kalavakkam' in user or 'ssn' in user or '603110' in user:
+    elif 'ssn college of engineering' in user or 'kalavakkam' in user or 'ssn' in user:
         return format_college_info(df.iloc[8])
     
-    elif 'sri venkateswara college of engineering' in user or 'svce' in user or 'pennalur' in user or 'sriperumbadur' in user or 'sriperumbadur' in user or '602117' in user:
+    elif 'sri venkateswara college of engineering' in user or 'svce' in user or 'pennalur' in user or 'sriperumbadur' in user or 'sriperumbadur' in user:
         return format_college_info(df.iloc[9])
     
-    elif 'srm institute of science and technology (main campus)' in user or 'srm' in user or 'kattankulathur' in user or '603203' in user:
+    elif 'srm institute of science and technology (main campus)' in user or 'srm' in user or 'kattankulathur' in user:
         return format_college_info(df.iloc[10])
     
-    elif 'vellore institute of technology' in user or 'vit' in user or 'kelambakkam' in user or 'vandalur' in user or '600127' in user:
+    elif 'vellore institute of technology' in user or 'vit' in user or 'kelambakkam' in user or 'vandalur' in user:
         return format_college_info(df.iloc[11])
     
-    elif 'saveetha engineering college' in user or 'saveetha university' in user or 'thandalam' in user or '602105' in user:
+    elif 'saveetha engineering college' in user or 'saveetha university' in user or 'thandalam' in user:
         return format_college_info(df.iloc[12])
     
-    elif "rajalakshmi engineering college (rec)" in user or 'rajalakshmi nagar' in user or 'thandalam' in user or '602105' in user:
+    elif "rajalakshmi engineering college (rec)" in user or 'rajalakshmi nagar' in user or 'thandalam' in user:
         return format_college_info(df.iloc[13])
     
-    elif 'jeppiaar engineering college' in user or 'omr' in user or 'rajiv gandhi salai' in user or '600119' in user:
+    elif 'jeppiaar engineering college' in user or 'omr' in user or 'rajiv gandhi salai' in user:
         return format_college_info(df.iloc[14])
     
-    elif 'chennai institute of technology (cit)' in user or 'cit' in user or 'kundrathur' in user or '600069' in user:
+    elif 'chennai institute of technology (cit)' in user or 'cit' in user or 'kundrathur' in user:
         return format_college_info(df.iloc[15])
     
-    elif 'hindustan institute of technology and science' in user or 'hindustan' in user or 'omr' in user or 'padur' in user or '603103' in user:
+    elif 'hindustan institute of technology and science' in user or 'hindustan' in user or 'omr' in user or 'padur' in user:
         return format_college_info(df.iloc[16])
     
-    elif 'academy of maritime education and training' in user or 'amet' in user or 'ecr' in user or 'kanathur' in user or '603112' in user:
+    elif 'academy of maritime education and training' in user or 'amet' in user or 'ecr' in user or 'kanathur' in user:
         return format_college_info(df.iloc[17])
     
-    elif 'dr. mgr educational and research institute' in user or 'mgr' in user or 'maduravoyil' in user or '600095' in user:
+    elif 'dr. mgr educational and research institute' in user or 'mgr' in user or 'maduravoyil' in user:
         return format_college_info(df.iloc[18])
     
-    elif 'b. s. abdur rahman crescent institute of science and technology' in user or 'crescent' in user or 'vandalur' in user or '600048' in user:
+    elif 'b. s. abdur rahman crescent institute of science and technology' in user or 'crescent' in user or 'vandalur' in user:
         return format_college_info(df.iloc[19])
     
-    elif 'stanley medical college' in user or 'broadway' in user or '600001' in user:
+    elif 'stanley medical college' in user or 'broadway' in user:
         return format_college_info(df.iloc[20])
     
-    elif 'madras medical college' in user or 'park town' in user or '600003' in user:
+    elif 'madras medical college' in user or 'park town' in user:
         return format_college_info(df.iloc[21])
     
-    elif 'ethiraj college for women' in user or 'egmore' in user or '600008' in user:
+    elif 'ethiraj college for women' in user or 'egmore' in user:
         return format_college_info(df.iloc[22])
     
-    elif 'dg vaishnav college' in user or 'saidapet' in user or '600015' in user:
+    elif 'dg vaishnav college' in user or 'saidapet' in user:
         return format_college_info(df.iloc[23])
     
-    elif 'mop vaishnav college for women' in user or 'nungambakkam' in user or '600034' in user:
+    elif 'mop vaishnav college for women' in user or 'nungambakkam' in user:
         return format_college_info(df.iloc[24])
     
-    elif 'the new college' in user or 'royapettah' in user or '600014' in user:
+    elif 'the new college' in user or 'royapettah' in user:
         return format_college_info(df.iloc[25])
     
-    elif 'vels institute of science' in user or 'pallavaram' in user or 'vels' in user or '600117' in user:
+    elif 'vels institute of science' in user or 'pallavaram' in user or 'vels' in user:
         return format_college_info(df.iloc[26])
     
-    elif 'sathyabama institute of science and technology' in user or 'sathyabama' in user or 'omr' in user or '600119' in user:
+    elif 'sathyabama institute of science and technology' in user or 'sathyabama' in user or 'omr' in user:
         return format_college_info(df.iloc[27])
     
-    elif 'indian institute of technology madras (iitm)' in user or 'iit' in user or 'iitm' in user or 'adyar' in user or '600036' in user:
+    elif 'indian institute of technology madras (iitm)' in user or 'iit' in user or 'iitm' in user or 'adyar' in user:
         return format_college_info(df.iloc[28])
     
-    elif 'national institute of fashion technology' in user or 'taramani' in user or '600113' in user:
+    elif 'national institute of fashion technology' in user or 'taramani' in user:
         return format_college_info(df.iloc[29])
     
-    elif 'srm institute of science and technology' in user or 'ramapuram' in user or '600089' in user:
+    elif 'srm institute of science and technology' in user or 'ramapuram' in user:
         return format_college_info(df.iloc[30])
     
-    elif 'a m jain college' in user or 'meenambakkam' in user or 'minambakkam' in user or '600061' in user:
+    elif 'a m jain college' in user or 'meenambakkam' in user or 'minambakkam' in user:
         return format_college_info(df.iloc[31])
     
-    elif 'bharath institute of higher education and research' in user or 'selaiyur' in user or '600073' in user:
+    elif 'bharath institute of higher education and research' in user or 'selaiyur' in user:
         return format_college_info(df.iloc[32])
     
-    elif 'srm institute of science and technology' in user or 'vadapalani' in user or '600026' in user:
+    elif 'srm institute of science and technology' in user or 'vadapalani' in user:
         return format_college_info(df.iloc[33])
     
-    elif 'madras institute of technology' in user or 'mit' in user or 'chrompet' in user or '600044' in user:
+    elif 'madras institute of technology' in user or 'mit' in user or 'chrompet' in user:
         return format_college_info(df.iloc[34])
 
-    elif 'gurunanak' in user or 'velachery' in user or 'gnc' in user or 'guru nanak college' in user or '600042' in user:
+    elif 'gurunanak' in user or 'velachery' in user or 'gnc' in user or 'guru nanak college' in user:
         return format_college_info(df.iloc[35])
 
-    elif 'stella maris college' in user or 'stella maris' in user or 'gopalapuram' in user or 'poes garden' in user or '600086' in user:
+    elif 'stella maris college' in user or 'stella maris' in user or 'gopalapuram' in user or 'poes garden' in user:
         return format_college_info(df.iloc[36])
 
-    elif 'sri muthukumaran institute of technology' in user or 'smit' in user or 'kundrathur' in user or 'mangadu' in user or '600069' in user:
+    elif 'sri muthukumaran institute of technology' in user or 'smit' in user or 'kundrathur' in user or 'mangadu' in user:
         return format_college_info(df.iloc[37])
 
         
@@ -251,5 +251,6 @@ if st.sidebar.button("Clear Chat History"):
         {"role": "assistant", "content": "Hi Buddy! I can help you find information about colleges in Chennai. How can I assist you today?"}
     ]
     st.rerun()  
+
 
 
